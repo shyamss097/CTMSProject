@@ -1,0 +1,37 @@
+
+{% extends 'index.html' %}
+
+{% block title %}Matches{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class = "col-md-12">
+      <h1>Teams</h1>
+      <hr>
+          <div class="row">
+              {%for val in matches%}
+               <div class="col-md-3">
+                
+                      <div class="card-body">
+                        <div class="card text-bg-primary mb-4 width-100">
+                          <h4 class="card-title">MatchID = {{val.matchid}}</h4>
+                        </div>
+                        {% comment %} <div class="card text-bg-danger mb-4 width-100"> {% endcomment %}
+                              <h5 class="card-text">Team A = {{val.teama_id.teamname}} </h5>
+                        {% comment %} </div>     {% endcomment %}
+                              <h5 class="card-text">Team B = {{val.teamb_id.teamname}}</h5>
+                              <p class="card-text">Status = {{val.status}}<br>
+                                      Result = {{val.result}}<br>
+                                      Date = {{val.mdate}}</p>
+
+                  </div>
+              
+          </div> 
+          {%endfor%}
+       </div>     
+      </div>     
+  </div>     
+</div> 
+
+{% endblock content %}

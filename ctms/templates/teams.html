@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% block title %}Teams{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class = "col-md-12">
+      <h1>Teams</h1>
+      <hr>
+          <div class="row">
+              {%for val in teamslist%}
+               <div class="col-md-3">
+                <a href={% url 'teamsview' val.teamid %}
+                  <div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title">{{val.teamid}}</h5>
+                              <h4 class="card-text">{{val.teamname}}</h4>
+                              <p class="card-text"> Team Rank= {{val.teamrank}}<br>
+                                      No of wins = {{val.noofwins}}<br>
+                                      No of losses= {{val.nooflosses}}<br>
+                                      No of draws = {{val.noofdraws}}</p>
+
+                  </div>
+              </div></a>
+          </div><br> 
+          {%endfor%}
+       </div>     
+      </div>     
+  </div>     
+</div> 
+
+{% endblock content %}

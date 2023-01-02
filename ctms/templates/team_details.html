@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+
+{% block title %}Players{% endblock title %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class = "col-md-12">
+      <h1>Players</h1>
+      <hr>
+          <div class="row">
+              {%for val in players%}
+               <div class="col-md-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title">{{val}}</h5>
+                              <p class="card-text"><h6> Batting statistics</h6><hr>
+                                      No of matches = {{val.noofmatches}}<br>
+                                      Runs scored = {{val.runsscored}}<br>
+                                      Strike rate = {{val.strikerate}}<br>
+                                      No of fours = {{val.nooffours}}<br>
+                                      No of sixes = {{val.noofsixes}}<br>
+
+                                      <h6> Bowling statistics</h6><hr>
+                                        No of wickets = {{val.noofwickets}}<br>
+                                        Economy = {{val.economy}}<br>
+                                        Best bowling = {{val.bestbowling}}<br>
+                                        
+                                    </p>
+
+                  </div>
+              </div>
+          </div> 
+          {%endfor%}
+       </div>     
+      </div>     
+  </div>     
+</div> 
+{% endblock content %}
+
+
